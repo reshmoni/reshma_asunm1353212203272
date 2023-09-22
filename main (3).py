@@ -1,43 +1,16 @@
-class Player(object):
-    def __init__(self, name, age, skills, style=None):
-        self.name = name
-        self.age = age
-        self.skills = skills
-        self.style = style
+def linearSearchProduct(productList, targetProduct):
+  indices = []
 
-    def get_player(self):
-        print(self.name,self.age,self.skills,self.style)
+  for index, product in enumerate(productList):
+    if product == targetProduct:
+      indices.append(index)
 
-
-class Team(object):
-    def __init__(self, name):
-        self.name = name
-        self._players = []
-
-    def add_player(self, obj):
-        if isinstance(obj, Player):
-            self._players.append(obj)
-        else:
-            print("Please provide player object")
-
-    def get_players(self):
-        for player in self._players:
-            player.get_player()
+  return indices
 
 
-if __name__ == "__main__":
-
-    p1 = Player("reshma", 46, "Wicket Kipper", "Right-Hand Batsman")
-    p2 = Player("aafila", 35, "Batsman", "Right-Hand Batsman")
-    p3 = Player("varshini", 44, "Batsman", "Left-Hand Batsman")
-    p4 = Player("janani", 38, "Bauwller", "Medium Pace Bauwller")
-    p5 = Player("Yuvathi", 43, "All rounder")
-
-    t = Team("India")
-    t.add_player(p1)
-    t.add_player(p2)
-    t.add_player(p3)
-    t.add_player(p4)
-    t.add_player(p5)
-
-    t.get_players()
+# Example usage:
+products = ["shoes", "boot", "loafer", "shoes", "sandal", "shoes"]
+target = "shoes"
+target2 = 'apple'
+result = linearSearchProduct(products, target)
+print(result)
